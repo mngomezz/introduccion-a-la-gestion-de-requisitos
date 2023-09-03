@@ -1,6 +1,8 @@
-# Clase <fecha>
+# Clase 3 - 31/8/2023
 
-## Main title 1
+## Introducción
+
+"Hasta ahora se habló del proceso software, de sus etapas y sus participantes. También de la importancia de detectar los errores lo antes posible. La última clase se abordó sobre qué es la gestión de requisitos" - Profesor
 
 ### Sub title 1.1
 
