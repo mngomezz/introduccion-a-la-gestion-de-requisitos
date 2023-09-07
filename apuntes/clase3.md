@@ -2,7 +2,7 @@
 
 ## Introducción
 
-"Hasta ahora se habló del proceso software, de sus etapas y sus participantes. También de la importancia de detectar los errores lo antes posible. La última clase se abordó sobre qué es la gestión de requisitos y nos metimos en algunos modelos que describen la ingeniería de requisitos ( Sommerville y Wiegers )" - Profesor
+"Hasta ahora se habló del proceso software, de sus etapas y sus participantes. También de la importancia de detectar los errores lo antes posible. La última clase se abordó sobre qué es la gestión de requisitos y nos metimos en algunos modelos que describen la ingeniería de requisitos ( Somerville y Wiegers )" - Profesor
 
 ## Criterios para _clasificar_ a los requisitos
 
@@ -50,13 +50,91 @@ Ejemplo Ama de llaves: Que se encargue de resolver la limpieza de mi casa, efect
 
     Importante destacar nuevamente que el requisito no funcional puede tratar acerca de un requisito funcional ó sobre el sistema general.
 
----
+Un ejemplo de profe La Rosa acerca del sistema SUBE: "El sistema subé me deberá cobrar a través del sistema RFID" _(definición en **AQNC**)_. En este ejemplo se especifica cómo se cobrará (con bastante detalle, en bajo nivel).
+
+Ahora el mismo requisito no funcional y de alto nivel podría ser "El sistema subé me deberá cobrar a través de una forma sin contacto y por proximidad". Esto probablemente lo generó un **_ingeniero de requisitos_** el cual no sabe tanto acerca de tecnologías que serán usadas, como la RFID.
+
+Sommerville: "Muchas veces, cuando un sistema no satisface las funcionalidades el usuario encuentra otro camino para satisfacerlo". Como un atajo.
+
+Ejemplo, quiero obtener un listado de alumnos pero en la plataforma no existe esa opción. Sin embargo, al querer generar un nuevo exámen en la plataforma se me despliegan todos esos alumnos y los logro obtener de ahí.
+
+A veces hay requisitos no funcionales que si no se cumplen, por más que esté la funcionalidad, el sistema es obsoleto.
+
+    Ejemplo profe SUBE
+        Requisito funcional: Que el sistema me deje pagar
+        Requisito no funcional: Que me permita pagar en no mas de 5 segundos
+
+        En caso de no cumplirse el no funcional, ponele que tarda 1 minuto... el sistema es obsoleto.
+
+    Por lo tanto a veces los requisitos no funcionales son más importantes que los funcionales.
+
+## Cuadro de requisitos no funcionales (libro de Somerville, página 106)
+
+![Requerimientos no funcionales](../archivos/somerville-req-no-funcionales.PNG)
+
+_Se intenta representar a los requisitos no funcionales en algo mesurable, medible.
+Para el funcional es fácil saber esto, **cumple o no cumple**. En cambio para los no funcionales se arma ese gráfico. Esto no quiere decir que todos los proyectos van a tener uno o más requerimientos no funcionales de cada tipo, sino que es a modo de reconocimiento del requerimiento._
+
+Ejemplos de algunos:
+
+- El sistema sube debe tener una tasa de fallos menor a ... 3%. -> Requerimiento de confiabilidad.
+
+- De seguridad sería el sistema SUBE debe ser inmune a la copia de datos personales. Ambientales según la región donde se esté, como reaccionará al ambiente.
+
+- De ambiental dijo: en el sistema SUBE no sería conveniente usar un teclado tipo PC para registrar la subida de cada pasajero ( o sea, estoy en un bondi y me muevo mucho... ambientalmente mal), dijo eso posta.
+
+- Requisito organizacional de desarrollo ( es controversial según el profe ). El sistema SUBE se debe desarrollar en JAVA. ESO NO VA. Eso es muy específico. Ejemplo, **_según una ley, en Argentina todos los sistemas que use el Estado deben ser software libre_**.
+
+- Requsitos regulatorios: cumplimiento de alguna ley o norma. El sistema SUBE debe respetar a la ley tal tal y tal de protección de datos personales (también podría ser de seguridad). Otro: puede ser que para tal sistema se aplique una ley que se prohiba tal transacción en cierta moneda, solo se admiten pesos o dólares, etc.
+
+- Éticos: No necesariamente determinado por la ley o norma sino por valores y principios de la organización o del dominio. Ejemplo: un req. no funcional ético podría ser evitar la caracterización por género.
+
+- Contables: obviamente tiene que ver con la contabilidad. El manejo de las transacciones de capital. Muchos requisitos legales por parte de la AFIP, la aduana, del Banco Central.
+
+- Protección/Seguridad: medio repetido esto... dijo lo mismo de protección de datos personales.
+
+**_Tener requisitos no funcionales mesurables de esta forma previene discusiones y malentendidos._**
+
+## Reglas del dominio ó negocio
+
+Por ejemplo, si digo el sistema SUBE manejará el transporte público de pasajeros en la **República Argentina**, estoy delimitando su territorio, su **_dominio_**.
+
+Otro ejemplo, PedidosYa permite la compra y delivery de **_productos alimenticios_**. Hay reglas de ese dominio, por ejemplo, no se vende alcohol a menores de 18 años. No es un requisito, pero lo será si el sistema tiene que asegurar que no se venda alcohol a menores.
+
+No quiere decir que el sistema tenga la obligación a seguir esas reglas. Un requisito es algo que se le **pide** al sistema.
+
+## Elicitar y relevar
+
+Técnicas en el proceso de adquisición del conocimiento.
+
+Relevar según La Rosa es: se sienta una persona con otra y uno escucha y toma nota. Con el tiempo se profundizó esto, para no quedarse con poca información. No hay ser estáticos y quedarme con lo que el cliente diga. Tengo que descubrir nuevas necesidades y algo que no se haya pensado.
+
+Hay una gran diferencia con elicitar, que es la actitud, el compromiso, ACTIVA, tratando de avanzar, la escucha activa (tomar notas y verificar conceptos).
+
+    ¿Cómo se elicita?
+    Tomando notas, repreguntando (Fantino: Para para para... ¿Vos me estas diciendo ...?), parafraseando...
+
+Empatizamos con el usuario, me pongo en el lugar del otro, entiendo lo que le pasa.
+
+### Extracción de información y educción
+
+- Extracción es el proceso de recolección de información, tiene múltiples fuentes y ninguna de ellas es humana. Bibliografía, chequeo procesos, manuales, ver un sistema existente, el sistema de la competencia, entre otras.
+
+- Educción es cuando nos cuentan las necesidades. Yo me siento con alguien y le digo: Contame lo que necesitas... Siempre del lado de la persona.
+
+Si tengo que relevar algo nuevo, que no existe. Y hay otro que ya existe que quiere desarrollarse más, que quiere expandirse.
+
+Lo que es nuevo seguramente esta en la mente de las personas que lo quieren desarrollar. Necesito usar la educción. En cambio cuando algo ya existe se usa la extracción.
+
+Se dió a entender que se iba a trabajar con este tema la semana que viene... todo esta última parte la dió La Rosa en 25 min... como el orto posta, apurado. Quizás la clase 4 tiene la posta y tira cosas de esto.
 
 ## Glosario
 
-> AQNC: (Algo que no conozco) Explicación de que es ese algo.
+> - Sistema Radio Frequency Identification (RFID) emite señales y en el contexto de la tarjeta SUBE, cuando ésta se acerca le devuelve un eco y ahí se efectúa.
+>
+> -
 
 ## Bibliografia
 
-- [PPT de MIeL](https://miel.unlam.edu.ar/path-a-la-ppt-de-miel-en-cuestion)
+- [PPT Somerville](https://miel.unlam.edu.ar/data7/data2/contenido/3630/Ingenieria-de-Software---Somerville,-Ian---9---Edic.pdf)
 - [Otro link](https://www.otro-link-clave.com/)
